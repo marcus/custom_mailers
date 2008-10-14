@@ -1,0 +1,24 @@
+CustomMailers
+===========
+
+Use ActionMailer to send email from a SMTP server settings specified at runtime.
+
+Example
+=======
+
+MyMailer.deliver_from({:address => "localhost", :port => 25, :domain => "mail.mydomain.com"}) do  |mailer|
+  mailer.deliver_test_email                                                                                    
+end
+
+Credits
+=======
+
+This code is largely inspired by nakajima's many-mailers:
+
+http://github.com/nakajima/many-mailers
+
+The functionality is different enough that it seemed like it deserved a separate project. ManyMailers requires you to specify the SMTP servers you'll use in a YAML file that gets loaded when your application starts, CustomMailers allows you to specify it at runtime (from settings stored in the database, for example).
+
+Copyright (c) 2008 Marcus Vorwaller
+
+Released under the MIT license
